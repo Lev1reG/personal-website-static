@@ -1,7 +1,11 @@
 ---
 import Hero from "@/components/Home/Hero";
+import WorkExperience from "@/components/Home/WorkExperience";
+import Education from "@/components/Home/Education";
 import Layout from "../layouts/Layout.astro";
 import { heroData } from "@/data/hero";
+import { workData } from "@/data/workExperience";
+import { educationData } from "@/data/education";
 ---
 
 <Layout>
@@ -10,4 +14,6 @@ import { heroData } from "@/data/hero";
     phrases={heroData.phrases}
     description={heroData.description}
   />
+  <WorkExperience client:visible experiences={workData} />
+  <Education client:visible experiences={educationData} />
 </Layout>
