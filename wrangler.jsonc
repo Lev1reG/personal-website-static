@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "deren-personal-website",
+  "name": "deren-personal",
   // Update to today's date
   "compatibility_date": "2025-07-13",
   "assets": {
