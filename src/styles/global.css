@@ -1,7 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+.shadow-0 {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-1 {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2 {
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-3 {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@theme {
+  --color-brand-50: oklch(97.44% 0.013 240.95);
+  --color-brand-100: oklch(94.70% 0.027 244.68);
+  --color-brand-200: oklch(89.49% 0.055 245.09);
+  --color-brand-300: oklch(84.68% 0.081 245.01);
+  --color-brand-400: oklch(79.77% 0.109 245.90);
+  --color-brand-500: oklch(75.09% 0.135 247.05);
+  --color-brand-600: oklch(67.00% 0.127 247.37);
+  --color-brand-700: oklch(58.67% 0.119 247.82);
+  --color-brand-800: oklch(50.10% 0.112 248.66);
+  --color-brand-900: oklch(41.19% 0.103 249.86);
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -116,5 +156,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
