@@ -1,5 +1,6 @@
 ---
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./src/styles/global.css";
 ---
 
@@ -38,7 +39,10 @@ import "./src/styles/global.css";
   <body>
     <div class="min-h-screen flex flex-col dark:bg-neutral-900 bg-neutral-100">
       <Navbar client:load />
-      <slot />
+      <main class="container mx-auto px-4 lg:px-16">
+        <slot />
+      </main>
+      <Footer />
     </div>
   </body>
 </html>
