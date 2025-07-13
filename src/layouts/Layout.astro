@@ -3,6 +3,7 @@ import "@fontsource-variable/plus-jakarta-sans";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "@/styles/global.css";
+import Head from "@/components/Head.astro";
 ---
 
 <script is:inline>
@@ -35,7 +36,7 @@ import "@/styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>About Me | Deren Tanaphan</title>
+    <Head />
   </head>
   <body>
     <div class="min-h-screen flex flex-col dark:bg-neutral-900 bg-neutral-100">
