@@ -2,10 +2,12 @@
 import Hero from "@/components/Home/Hero";
 import WorkExperience from "@/components/Home/WorkExperience";
 import Education from "@/components/Home/Education";
+import Projects from "@/components/Home/Projects";
 import Layout from "../layouts/Layout.astro";
 import { heroData } from "@/data/hero";
 import { workData } from "@/data/workExperience";
 import { educationData } from "@/data/education";
+import { projectData } from "@/data/projects";
 ---
 
 <Layout>
@@ -16,4 +18,5 @@ import { educationData } from "@/data/education";
   />
   <WorkExperience client:visible experiences={workData} />
   <Education client:visible experiences={educationData} />
+  <Projects client:visible projects={projectData} />
 </Layout>
