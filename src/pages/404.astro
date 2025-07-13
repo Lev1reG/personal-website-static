@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout>
+  <div class="min-h-screen flex flex-col items-center justify-center space-y-3">
+    <h1 class="lg:text-9xl text-6xl text-brand-500 font-bold text-center">
+      404
+    </h1>
+    <h2 class="lg:text-2xl text-xl text-center font-semibold">
+      Page Not Found.
+    </h2>
+    <p class="lg:text-base text-xs text-center">
+      Sorry, we can't find the page you're looking for.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 text-neutral-900 dark:text-neutral-100 bg-brand-500 hover:bg-brand-600 border border-brand-300"
+    >
+      Go Back Home
+    </a>
+  </div>
+</Layout>
