@@ -59,11 +59,15 @@ const ThemeToggle = ({
         <button
           className={`text-neutral-900 dark:text-neutral-100 hover:text-brand-500 dark:hover:text-brand-500 transition-colors ${className}`}
           aria-label="Toggle theme"
+          style={{
+            WebkitTapHighlightColor: "transparent",
+            touchAction: "manipulation",
+          }}
         >
           {getThemeIcon()}
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align={align}>
+      <DropdownMenuContent align={align} className="w-[70]">
         <DropdownMenuCheckboxItem
           checked={theme === "theme-light"}
           onCheckedChange={() => setTheme("theme-light")}
