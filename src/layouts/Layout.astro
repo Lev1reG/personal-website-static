@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "@/styles/global.css";
 import Head from "@/components/Head.astro";
+
+const { title } = Astro.props;
 ---
 
 <script is:inline>
@@ -36,7 +38,7 @@ import Head from "@/components/Head.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
-    <Head />
+    <Head title={title} />
   </head>
   <body>
     <div class="min-h-screen flex flex-col dark:bg-neutral-900 bg-neutral-100">
