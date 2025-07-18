@@ -40,7 +40,7 @@ const Hero = ({ phrases, description }: HeroProps) => {
         </h1>
       </div>
       <div className="xl:max-w-xl flex flex-col items-center xl:items-start space-y-5">
-        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-center dark:text-neutral-100 text-neutral-900 min-h-[2.5rem]">
+        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-center xl:text-left dark:text-neutral-100 text-neutral-900 min-h-[2.5rem]">
           <TypewriterCycle
             phrases={phrases}
             typingSpeed={100}
