@@ -68,7 +68,7 @@ const Hero = ({ phrases, description }: HeroProps) => {
               className="font-bold text-lg xl:text-xl"
             >
               <motion.a
-                href="https://saweria.co/levireg"
+                href="https://trakteer.id/levireg"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{

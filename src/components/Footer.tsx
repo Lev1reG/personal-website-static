@@ -14,7 +14,7 @@ const Footer = () => {
         <p className="text-xs text-neutral-500 text-center">
           © {new Date().getFullYear()} Deren Tanaphan. Buy me a coffee{" "}
           <a
-            href="https://saweria.co/levireg"
+            href="https://trakteer.id/levireg"
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-700 hover:underline"
