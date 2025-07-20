@@ -16,10 +16,11 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Home", path: "#hero" },
-    { name: "Experience", path: "#workexperience" },
-    { name: "Projects", path: "#projects" },
-    { name: "Journey", path: "#journey" },
+    { name: "Home", path: "/#hero" },
+    { name: "Experience", path: "/#workexperience" },
+    { name: "Projects", path: "/#projects" },
+    { name: "Journey", path: "/#journey" },
+    { name: "Blog", path: "/blog" },
   ];
 
   return (

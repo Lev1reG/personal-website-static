@@ -1,0 +1,81 @@
+---
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { formatRelativeDate } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+
+interface Props {
+  title: string;
+  slug: string;
+  content: string;
+  tags?: string[];
+  date: string;
+  thumbnailUrl: string;
+  excerpt?: string;
+}
+
+const { title, slug, content, date, thumbnailUrl, tags, excerpt } = Astro.props;
+
+const stripMarkdownAndTruncate = (markdown: string, wordLimit: number = 20) => {
+  const plainText = markdown
+    .replace(/#{1,6}\s+/g, "")
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\*(.*?)\*/g, "$1")
+    .replace(/`(.*?)`/g, "$1")
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+    .replace(/!\[.*?\]\(.*?\)/g, "")
+    .replace(/>/g, "")
+    .replace(/\n+/g, " ")
+    .trim();
+
+  const words = plainText.split(" ").filter((word) => word.length > 0);
+
+  if (words.length <= wordLimit) return plainText;
+
+  return words.slice(0, wordLimit).join(" ") + "...";
+};
+---
+
+<a href={`/blog/${slug}`} class="h-full">
+  <Card className="h-full">
+    <CardHeader>
+      <p class="text-sm dark:text-neutral-400 text-neutral-600">
+        {formatRelativeDate(date)}
+      </p>
+    </CardHeader>
+    <CardContent
+      className="flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-x-4"
+    >
+      <div class="flex flex-col space-y-2">
+        <h2
+          class="text-lg lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+        >
+          {title}
+        </h2>
+        <p class="text-sm dark:text-neutral-300 text-neutral-700">
+          {excerpt || stripMarkdownAndTruncate(content)}
+        </p>
+      </div>
+      <img
+        src={thumbnailUrl}
+        alt={title}
+        class="w-full h-28 lg:w-32 lg:h-20 object-cover rounded-md flex-shrink-0"
+      />
+    </CardContent>
+    <CardFooter className="mt-auto">
+      <div class="flex flex-wrap gap-1">
+        {
+          tags?.map((tag, index) => (
+            <Badge key={index} variant="outline" className="text-xs">
+              {tag}
+            </Badge>
+          ))
+        }
+      </div>
+    </CardFooter>
+  </Card>
+</a>
