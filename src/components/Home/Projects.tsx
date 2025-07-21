@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react";
 
 interface ProjectsProps {
   projects: ProjectCardProps[];
@@ -94,11 +95,12 @@ const ProjectCard = ({
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-900 dark:text-neutral-100 hover:underline"
+                className="inline-flex items-center gap-2 text-neutral-900 dark:text-neutral-100 hover:underline"
                 itemProp="name"
                 aria-label={`Visit ${title} project`}
               >
                 {title}
+                <ArrowSquareOutIcon weight="bold" className="shrink-0"/>
               </a>
             ) : (
               <span itemProp="name">{title}</span>
