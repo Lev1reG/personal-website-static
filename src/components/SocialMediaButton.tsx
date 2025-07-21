@@ -5,7 +5,7 @@ import {
   GithubLogoIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 
 interface SocialMediaButtonProps {
   href: string;

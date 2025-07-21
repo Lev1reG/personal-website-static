@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { SunIcon, MoonIcon, DesktopIcon } from "@phosphor-icons/react";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -7,6 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
+import { DesktopIcon, MoonIcon, SunIcon } from "@phosphor-icons/react/dist/ssr";
 
 interface ThemeToggleProps {
   iconSize?: number;
