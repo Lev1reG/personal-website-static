@@ -1,0 +1,15 @@
+---
+interface Props {
+  start: number;
+  end: number;
+  total: number;
+}
+
+const { start, end, total }: Props = Astro.props;
+---
+
+<div class="flex justify-center">
+  <p class="text-sm text-neutral-600 dark:text-neutral-400">
+    Showing {start} - {end} of {total} posts
+  </p>
+</div>

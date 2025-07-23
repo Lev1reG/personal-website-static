@@ -1,0 +1,102 @@
+---
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  prevUrl?: string;
+  nextUrl?: string;
+}
+
+const { currentPage, totalPages, prevUrl, nextUrl }: Props = Astro.props;
+
+const generatePageNumbers = (current: number, total: number) => {
+  const pages: (number | "ellipsis")[] = [];
+
+  if (total <= 7) {
+    // Show all pages if total is 7 or less
+    for (let i = 1; i <= total; i++) {
+      pages.push(i);
+    }
+  } else {
+    // Always show the first page
+    pages.push(1);
+
+    if (current <= 4) {
+      // Show pages 1 - 5 and elliptis + last page
+      for (let i = 2; i <= 5; i++) {
+        pages.push(i);
+      }
+      pages.push("ellipsis");
+      pages.push(total);
+    } else if (current >= total - 3) {
+      // Show first page + ellipsis + last 5 pages
+      pages.push("ellipsis");
+      for (let i = total - 4; i <= total; i++) {
+        pages.push(i);
+      }
+    } else {
+      // Show first page, ellipsis, current, current + 1, ellipsis, last page
+      pages.push("ellipsis");
+      for (let i = current - 1; i <= current + 1; i++) {
+        pages.push(i);
+      }
+      pages.push("ellipsis");
+      pages.push(total);
+    }
+  }
+
+  return pages;
+};
+
+const pageNumbers = generatePageNumbers(currentPage, totalPages);
+
+const buildUrl = (page: number) => {
+  return `/blog/${page}`;
+};
+---
+
+<Pagination>
+  <PaginationContent>
+    {
+      prevUrl && (
+        <PaginationItem>
+          <PaginationPrevious href={prevUrl} />
+        </PaginationItem>
+      )
+    }
+
+    {
+      pageNumbers.map((page, index) => (
+        <PaginationItem key={index}>
+          {page === "ellipsis" ? (
+            <PaginationEllipsis />
+          ) : (
+            <PaginationLink
+              href={buildUrl(page as number)}
+              isActive={page === currentPage}
+            >
+              {page}
+            </PaginationLink>
+          )}
+        </PaginationItem>
+      ))
+    }
+
+    {
+      nextUrl && (
+        <PaginationItem>
+          <PaginationNext href={nextUrl}>Next</PaginationNext>
+        </PaginationItem>
+      )
+    }
+  </PaginationContent>
+</Pagination>
