@@ -1,3 +1,4 @@
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
 import { motion } from "framer-motion";
 
 const Education = ({ experiences }: { experiences: ExperienceProps[] }) => {
@@ -71,11 +72,12 @@ const Experience = ({ university, degree, date, href }: ExperienceProps) => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-900 dark:text-neutral-100 hover:underline"
+              className="inline-flex items-center gap-2 text-neutral-900 dark:text-neutral-100 hover:underline"
               itemProp="educationCredentialAwarded"
               aria-label={`Visit ${university} website`}
             >
               {university}
+              <ArrowSquareOutIcon weight="bold" className="flex-shrink-0" />
             </a>
           ) : (
             <span itemProp="educationalCredentialAwarded">{university}</span>

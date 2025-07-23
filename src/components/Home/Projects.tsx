@@ -100,7 +100,7 @@ const ProjectCard = ({
                 aria-label={`Visit ${title} project`}
               >
                 {title}
-                <ArrowSquareOutIcon weight="bold" className="shrink-"/>
+                <ArrowSquareOutIcon weight="bold" className="flex-shrink-0" />
               </a>
             ) : (
               <span itemProp="name">{title}</span>

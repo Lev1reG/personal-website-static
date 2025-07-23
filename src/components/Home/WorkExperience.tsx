@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
 
 interface WorkExperienceProps {
   experiences: ExperienceProps[];
@@ -82,29 +83,28 @@ const Experience = ({
     >
       <div className="w-full flex lg:flex-row flex-col justify-between items-center space-y-2 lg:space-y-0">
         <div className="flex lg:flex-row flex-col items-center space-y-2 lg:space-y-0 lg:space-x-4">
-          {href ? (
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100 hover:underline"
-              itemProp="worksFor"
-              itemScope
-              itemType="https://schema.org/Organization"
-            >
+          <h2
+            className="text-lg lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+            itemProp="worksFor"
+            itemScope
+            itemType="https://schema.org/Organization"
+          >
+            {href ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-neutral-900 dark:text-neutral-100 hover:underline"
+                itemProp="name"
+                aria-label={`Visit ${company} website`}
+              >
+                {company}
+                <ArrowSquareOutIcon weight="bold" className="flex-shrink-0" />
+              </a>
+            ) : (
               <span itemProp="name">{company}</span>
-            </a>
-          ) : (
-            <h2
-              className="text-lg lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100"
-              itemProp="worksFor"
-              itemScope
-              itemType="https://schema.org/Organization"
-            >
-              <span itemProp="name">{company}</span>
-            </h2>
-          )}
-
+            )}
+          </h2>
           <Badge variant="default" itemProp="employmentType">
             {type}
           </Badge>
