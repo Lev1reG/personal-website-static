@@ -3,6 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
@@ -54,7 +55,7 @@ const ThemeToggle = ({
   };
 
   const content = (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <button
           className={`text-neutral-900 dark:text-neutral-100 hover:text-brand-500 dark:hover:text-brand-500 transition-colors ${className}`}
@@ -68,27 +69,18 @@ const ThemeToggle = ({
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align} className="w-[70]">
-        <DropdownMenuCheckboxItem
-          checked={theme === "theme-light"}
-          onCheckedChange={() => setTheme("theme-light")}
-        >
+        <DropdownMenuItem onClick={() => setTheme("theme-light")}>
           <SunIcon size={16} weight="bold" className="mr-2" />
           Light
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={theme === "dark"}
-          onCheckedChange={() => setTheme("dark")}
-        >
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
           <MoonIcon size={16} weight="bold" className="mr-2" />
           Dark
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={theme === "system"}
-          onCheckedChange={() => setTheme("system")}
-        >
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
           <DesktopIcon size={16} weight="bold" className="mr-2" />
           System
-        </DropdownMenuCheckboxItem>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

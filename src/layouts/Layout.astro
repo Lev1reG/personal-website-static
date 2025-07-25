@@ -34,8 +34,8 @@ import Head from "@/components/Head.astro";
   <head>
     <Head />
   </head>
-  <body>
-    <div class="min-h-screen flex flex-col dark:bg-neutral-900 bg-neutral-100">
+  <body class="dark:bg-neutral-900 bg-neutral-100">
+    <div class="min-h-screen flex flex-col">
       <Navbar client:load />
       <main class="container mx-auto px-4 lg:px-16">
         <slot />
