@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { formatRelativeDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -41,7 +42,9 @@ const stripMarkdownAndTruncate = (markdown: string, wordLimit: number = 20) => {
 ---
 
 <a href={`/blog/${slug}`} class="h-full">
-  <Card className="h-full hover:border-neutral-500 transition-colors duration-300 ease-in-out">
+  <Card
+    className="h-full hover:border-neutral-500 transition-colors duration-300 ease-in-out"
+  >
     <CardHeader>
       <p class="text-sm dark:text-neutral-400 text-neutral-600">
         {formatRelativeDate(date)}
@@ -60,10 +63,14 @@ const stripMarkdownAndTruncate = (markdown: string, wordLimit: number = 20) => {
           {excerpt || stripMarkdownAndTruncate(content)}
         </p>
       </div>
-      <img
+      <Image
         src={thumbnailUrl}
         alt={title}
+        width={128}
+        height={80}
         class="w-full h-28 lg:w-32 lg:h-20 object-cover rounded-md flex-shrink-0"
+        loading="eager"
+        format="webp"
       />
     </CardContent>
     <CardFooter className="mt-auto">
