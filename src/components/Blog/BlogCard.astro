@@ -41,7 +41,7 @@ const stripMarkdownAndTruncate = (markdown: string, wordLimit: number = 20) => {
 ---
 
 <a href={`/blog/${slug}`} class="h-full">
-  <Card className="h-full">
+  <Card className="h-full hover:border-neutral-500 transition-colors duration-300 ease-in-out">
     <CardHeader>
       <p class="text-sm dark:text-neutral-400 text-neutral-600">
         {formatRelativeDate(date)}
