@@ -23,7 +23,7 @@ const Hero = ({ phrases, description }: HeroProps) => {
       <div className="xl:max-w-xl flex flex-col items-center xl:items-start space-y-5">
         <img
           src="/profile-picture.png"
-          alt="Deren Tanaphan - Profile Picture"
+          alt="Deren Tanaphan"
           className="w-36 h-36 rounded-full border border-brand-300"
           loading="eager"
           width={144}
