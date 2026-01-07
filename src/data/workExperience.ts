@@ -1,14 +1,5 @@
 export const workData = [
   {
-    company: "GAMAFORCE UGM",
-    position: "Lead Programmer",
-    date: "December 2024 - Present",
-    description:
-      "As part of a new term in GAMAFORCE, I have been promoted to Lead Programmer, where I lead and coordinate the programming division in preparation for the Kontes Robot Terbang Indonesia (KRTI) 2025. My role involves guiding fellow programmers, maintaining development progress",
-    href: "https://www.linkedin.com/company/gamaforce-ugm/",
-    type: "Contract",
-  },
-  {
     company: "ArachnoVa",
     position: "Full Stack Developer",
     date: "December 2023 - Present",
@@ -25,6 +16,15 @@ export const workData = [
       "Developed and enhanced the event management and RSVP system of Munio (Community Platform), digital product of VhiWEB",
     href: "https://vhiweb.com",
     type: "Internship",
+  },
+  {
+    company: "GAMAFORCE UGM",
+    position: "Lead Programmer",
+    date: "December 2024 - December 2025",
+    description:
+      "As part of a new term in GAMAFORCE, I have been promoted to Lead Programmer, where I lead and coordinate the programming division in preparation for the Kontes Robot Terbang Indonesia (KRTI) 2025. My role involves guiding fellow programmers, maintaining development progress",
+    href: "https://www.linkedin.com/company/gamaforce-ugm/",
+    type: "Contract",
   },
   {
     company: "GAMAFORCE UGM",
