@@ -1,5 +1,14 @@
 export const workData = [
   {
+    company: "Kolosal.ai",
+    position: "Software Engineer",
+    date: "February 2026 - Present",
+    description:
+      "- Built a PDF-to-JSON document structuring pipeline for automated information extraction, alongside the full backend architecture for an SAT test-taking platform. Focused on reliable data processing, clean API design, and scalable backend patterns. - Built an automated document intelligence pipeline converting unstructured PDFs into structured JSON, enabling downstream processing at scale.\n- Designed and implemented the backend architecture for an SAT test-taking application, handling user sessions, test logic, and data persistence.\n- Delivered clean, maintainable systems with a focus on reliable data processing and robust API design.",
+    href: "https://www.kolosal.ai/",
+    type: "Full-Time",
+  },
+  {
     company: "ArachnoVa",
     position: "Full Stack Developer",
     date: "December 2023 - Present",

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
+import ReactMarkdown from "react-markdown";
 
 interface WorkExperienceProps {
   experiences: ExperienceProps[];
@@ -122,12 +123,12 @@ const Experience = ({
       >
         {position}
       </h3>
-      <p
-        className="text-xs lg:text-sm text-center lg:text-left dark:text-neutral-400 text-neutral-600"
+      <div
+        className="prose prose-sm max-w-none text-xs lg:text-sm text-center lg:text-left [&_*]:text-neutral-600 [&_*]:dark:text-neutral-400 [&_p]:my-0 [&_ul]:my-0"
         itemProp="description"
       >
-        {description}
-      </p>
+        <ReactMarkdown>{description}</ReactMarkdown>
+      </div>
     </article>
   );
 };
