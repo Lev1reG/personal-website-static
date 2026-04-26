@@ -1,5 +1,5 @@
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Education = ({ experiences }: { experiences: ExperienceProps[] }) => {
   return (
