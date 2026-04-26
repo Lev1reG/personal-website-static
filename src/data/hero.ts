@@ -8,5 +8,5 @@ export const heroData = {
     "Fast Learner & Disciplined",
   ],
   description:
-    "Passionate about software development, I build scalable and secure systems with a focus on clean code, privacy, and performance. Recently, I've been deepening my expertise in blockchain and distributed systems—exploring how decentralization and intelligent design can shape the future of technology.",
+    "I build secure, scalable infrastructure for AI systems, the engines that make ML reliable. I work across distributed systems, secure inference, and decentralized consensus, approaching hard problems with strong fundamentals and a bias for clean, maintainable engineering.",
 };
